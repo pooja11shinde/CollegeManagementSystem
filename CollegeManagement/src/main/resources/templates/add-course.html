@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<meta charset="ISO-8859-1">
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<title>Add Course details</title>
+</head>
+<body class="container">
+
+<h1>Add Course Details</h1>
+<form th:action="@{/saveCourse}" th:object="${course}" method="post" class="form needs-validation">
+    <div class="form-group">
+        <label for="courseName">Course Name</label>
+        <input class="form-control" type="text" th:field="*{courseName}" id="courseName" placeholder="Course Name">
+        <div  th:if="${#fields.hasErrors('courseName')}" th:errors="*{courseName}"></div>
+    </div>
+    <div class="form-group">
+        <label for="courseType">Course Type</label>
+        <input class="form-control" type="text" th:field="*{courseType}" id="courseType" placeholder="Course Type">
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('courseType')}" th:errors="*{courseType}"></div>
+    </div>
+    
+    <div class="form-group">
+        <label for="email">Course City</label>
+        <input class="form-control" type="text" th:field="*{courseCity}" id="courseCity" placeholder="Course City">
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('courseCity')}" th:errors="*{courseCity}"></div>
+    </div>
+    
+    <div class="form-group">
+        <label for="address">Address</label>
+        <input class="form-control" type="text" th:field="*{address}" id="address" placeholder="Address">
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></div>
+    </div>
+    
+    
+    
+    <input type="submit"  class="btn btn-primary mb-3" value="Add Course">
+    <a  th:href = "@{/getcourses}" class=" btn btn-primary btn-md mb-3 float-right"> Course List</a></li>
+</form>
+
+</body>
+</html>

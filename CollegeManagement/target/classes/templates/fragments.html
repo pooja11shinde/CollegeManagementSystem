@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+
+<head th:fragment="pageHeader">
+
+
+<meta charset="ISO-8859-1">
+<meta charset="utf-8">
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  
+  <link th:href="@{/css/main.css}" rel="stylesheet">
+<link th:href="@{/js/main.js}" rel="stylesheet">
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+ 
+ 
+<body>
+
+<div th:fragment="menu">
+
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li class="dropdown active"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Student <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#" th:href="@{/registration}">Add student</a></li>
+          <li><a href="#" th:href="@{/getStudents}">List student</a></li>
+         
+        </ul>
+      </li>
+      <li class="dropdown active"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Teacher <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#" th:href="@{/TeacherRegistration}">Add teacher</a></li>
+          <li><a href="#" th:href="@{/getTeachers}">List teacher</a></li>
+         
+        </ul>
+      </li>
+      <li class="dropdown active"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Course <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#" th:href="@{/courseRegistration}">Add course</a></li>
+          <li><a href="#" th:href="@{/getcourses}">List course</a></li>
+         
+        </ul>
+      </li>
+    
+      
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="active"><a href="#"  th:href="@{/Registration}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li class="active"><a href="#" th:href="@{/login}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+  
+
+
+</div>
+
+    <div th:fragment="middle_bar">
+ <div class="container-fluid">
+
+  
+
+     <div class="row">
+     <div class="col-md-6">
+     <img alt="okay java" src="images/slider.jpg " style="height:500px;width:100%;">
+     </div>
+     <div class="col-sm-6">
+     <h1 class="col ml-2">WHO<br>
+WE ARE?</h1>
+<h3 class="col pt-3 ml-2" style="color:orange;">All About College</h3>
+<p class="col pt-5">MIT has nearly 1000 staff members to guide students. Many MIT staff have completed their Post-graduation and doctorate (Ph.D.) from national and international premier institutions. The number of Ph.D. staff is about 80. MIT faculty upgrades their domain and pedagogy skills continuously through workshops, training programs, and interaction with teachers global community. MIT faculty engaged in R&D have filed many patents and have many publications to their credit. 
+
+</p></div>
+     </div>
+    
+     </div>
+      <div class="container-fluid">
+       
+  <div class="row" >
+   <div class="col"style="height:300px;width:100%;background-color:black;">  
+<center><h2 class="col text-light pt-2"style="color:white;">WORK<br>
+WITH US</h2>
+<h5 class="col  pt-2"style="color:white;"> Make Your Future Bright </h5>
+<p class="col text-light pt-2" style="color:yellow;">The Engineering Exploration initiative is one such initiative which has significantly improved learning outcome for students. At the core of this program are design thinking, teamwork, problem definition, and solution development. It integrates elements from different engineering disciplines making it a truly interdisciplinary approach and a fully functional tinkering lab facilitates conversion of ideas into products. 
+
+
+
+</p>
+<button type="button" class="btn btn-warning">GET A QUOTE</button>
+
+
+</center>
+    </div><br>
+    </div>
+  </div>
+        
+    </div>
+   
+
+
+
+<div th:fragment="pageFooter">
+<footer>
+<div class="row">  
+<div class="col-md-12">  
+  
+<footer class="footer">  
+
+<div class="row">  
+<div class="col-md-3 m-b-30">  
+<div class="footer-title m-t-5 m-b-20 p-b-8">  
+About us  
+</div>  
+<p class="text-white">  
+MIT Aurangabad  
+</p>  
+</div>  
+<div class="col-md-3 m-b-30">  
+<div class="footer-title m-t-5 m-b-20 p-b-8">  
+Latest themes  
+</div>  
+<div class="footer-links">  
+<a href="#">Student </a>  
+<a href="#">  
+Teacher 
+</a>  
+<a href="#">  
+Course 
+</a>  
+<a href="#">  
+ 
+</a>  
+</div>  
+</div>  
+<div class="col-md-3 m-b-30">  
+<div class="footer-title m-t-5 m-b-20 p-b-8">  
+Quick Links  
+</div>  
+<div class="footer-links">  
+<a href="#">  
+Blog  
+</a>  
+<a href="#">  
+FAQ  
+</a>  
+<a href="#">  
+Terms & conditions  
+</a>  
+<a href="#">  
+Privacy policy  
+</a>  
+</div>  
+</div>  
+<div class="col-md-3 m-b-30">  
+<div class="footer-title m-t-5 m-b-20 p-b-8">  
+Support  
+</div>  
+<div class="footer-links">  
+<a href="#">  
+Affiliate  
+</a>  
+<a href="#">  
+Login  
+</a>  
+<a href="#">  
+All theme package  
+</a>  
+<a href="#">  
+Support forum  
+</a>  
+</div>  
+<div class="footer-social-links m-t-30">  
+<li> <a href="#">  
+<i class="fa fa-facebook" aria-hidden="true"> </i> </a>  
+<a href="#"> <i class="fa fa-twitter" aria-hidden="true"> </i> </a>  
+<a href="#"> <i class="fa fa-linkedin" aria-hidden="true"> </i> </a>  
+<a href="#"> <i class="fa fa-youtube" aria-hidden="true"> </i> </a>  
+</li>  
+</div>  
+</div>  
+</div>  
+</div> </div> 
+ 
+<div class="footer-bottom">  
+Copyright ? 2022, All Rights Reserved  
+</div>  </footer> 
+
+       
+ </div>
+
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<meta charset="ISO-8859-1">
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<title>Add Student details</title>
+</head>
+<body class="container">
+
+<h1>Add Student Details</h1>
+<form th:action="@{/saveStudent}" th:object="${student}" method="post" class="form needs-validation">
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input class="form-control" type="text" th:field="*{firstName}" id="firstName" placeholder="First Name">
+        <div  th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></div>
+    </div>
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input class="form-control" type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></div>
+    </div>
+    
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input class="form-control" type="text" th:field="*{email}" id="email" placeholder="Email">
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+    </div>
+    
+    <div class="form-group">
+        <label for="contactNo">Contact_No</label>
+        <input class="form-control" type="tel" th:field="*{contactNo}" id="contactNo" placeholder="Contact_No">
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('contactNo')}" th:errors="*{contactNo}"></div>
+    </div>
+    <div class="form-group">
+        <label for="address">Address</label>
+        <input class="form-control" type="text" th:field="*{address}" id="address" placeholder="Address">
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></div>
+    </div>
+    <div class="form-group">
+        <label for="dob">DOB</label>
+        <input class="form-control" type="tel" th:field="*{dob}" id="dob" placeholder="DOB">
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('dob')}" th:errors="*{dob}"></div>
+    </div>
+    
+    
+    
+    <input type="submit"  class="btn btn-primary mb-3" value="Add Student">
+    <a  th:href = "@{/getStudents}" class=" btn btn-primary btn-md mb-3 float-right"> Student List</a></li>
+</form>
+
+</body>
+</html>
