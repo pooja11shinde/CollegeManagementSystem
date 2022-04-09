@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:fragment="pageHeader">
+  <title>College</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link href="assets/css/A.bootstrap.min.css+template.css+fa.min.css+gfonts.min.css,Mcc.LI5f1xXhbm.css.pagespeed.cf.G00NPyYGCq.css" rel="stylesheet" media="screen" />
+ 
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  
+<script>if ( top !== self ) top.location.replace( self.location.href );// Hey, don't iframe my iframe!</script>
+  
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding 
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }  */
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse" th:fragment="menu" style="background-color:#16153d">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+         <a ref="" class="navbar-brand"><img src="images/logo.png" style="height:50px; width:150px ;"></a>
+    
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+                <li ><a href="#" th:href="@{/contact}">Contact Us</a></li>
+        
+        <li><a href="#" th:href="@{/allCourses}">Course</a></li>
+        <li><a href="#" th:href="@{/student/portal}">Student Corner</a></li>
+        <li><a href="#" th:href="@{/teacher/portal}">TeacherCorner</a></li>
+      </ul>
+       <ul class="nav navbar-nav navbar-right">
+      <li sec:authorize="!isAuthenticated()">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="pl-3 btn btn-outline-light" th:href="@{/addTeacher}">As Teacher</a>
+                <div class="dropdown-divider"></div>
+                <a class="pl-3 btn btn-outline-light" th:href="@{/addStudent}">As Student</a>
+            </div>
+      </li>
+    <li sec:authorize="!isAuthenticated()" class="nav-item">
+            <a class="btn btn-outline-light" th:href="@{/login}">Login</a>
+        </li>
+        <li sec:authorize="isAuthenticated()" class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false" sec:authentication="name">
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div class="dropdown-divider"></div>
+                <a class="pl-3 btn btn-outline-light" th:href="@{/logout}">Logout</a>
+            </div>
+        </li>
+    </ul>
+    </div>
+  </div>
+</nav>
+
+
+<footer class="container-fluid text-center" th:fragment="pageFooter">
+
+
+  <br>
+  <div class="container-fluid text-center">
+    <div class="row bg-dark">
+      <div class="col-md-12 p-1"><br><br>
+      <marquee>  <h4 class="font-weight-bold text-white">All rights reserved © 2022.</h4></marquee>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+</body>
+</html>

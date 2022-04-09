@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head th:insert="fragments :: pageHeader">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<style>
+
+.text11
+   {
+    font-family:cursive;
+    font-size:28px;
+    color:#4298f5;
+    text-align:center;
+    font-style: bold;
+    margin-top:50px;
+  }
+ 
+
+</style>
+<div class="container-fluid">
+<div th:replace ="fragments :: menu "  >S</div>
+</div>
+
+<div class="col-sm-8 text-left" id="main">
+         <h3 class="text11">Announcements</h3><br>
+
+        <div class="card">
+            <div class="card-body">
+                    <div class="col-md-10">
+                     <div class="alert alert-warning" th:if="${message}" ></div>
+                            <table class="table table-striped table-responsive-md">
+                                <thead>
+                                    <tr>
+                                         <th>Title</th>
+                                        <th>Description</th>
+                                        <th>Announce Date</th>
+                                       
+                                        
+                                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="ann : ${anns}">  <!-- 1 -->
+                                        <td th:text="${ann.topic}"></td>
+                                        <td th:text="${ann.description}"></td>
+                                        <td th:text="${ann.ann_date}"></td>
+                                        
+                                       
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+                    </div>
+            
+<div class="col-sm-4 text-center" id="main"> <br><br>
+         <center> <img src="images/image3.jpg" style="height:270px ;width:200px;">
+
+</div>
+            
+    </div>
+                        <div th:replace ="fragments :: pageFooter "  >S</div>
+
+</body>
+</html>

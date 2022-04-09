@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head th:insert="fragments :: pageHeader">
+<meta charset="ISO-8859-1">
+<title>Announcement</title>
+</head>
+<style>
+
+.text11
+   {
+    font-family:cursive;
+    font-size:28px;
+    color:#4298f5;
+    text-align:center;
+    font-style: bold;
+    margin-top:50px;
+  }
+ 
+
+</style>
+
+<body>
+<div class="container-fluid">
+<div th:replace ="fragments :: menu "  >S</div>
+<form th:action="@{/teacher/saveAnnouncement}" th:object="${ann}" method="post">
+<div>        <h3 class="text11"> Add Announcements</h3><br>
+</div>
+<div class="col-sm-6 text-left" id="main">
+
+  <div class="form-group">
+  <div>
+      
+    <label for="title">Title</label>
+    <input type="text" class="form-control" id="topic" th:field="*{topic}" placeholder="Enter title">
+   </div>
+  <div class="form-group">
+    <label for="desc">Description</label>
+    <input type="text" class="form-control" th:field="*{description}" id="description" placeholder="Description">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+</div>
+                        <div th:replace ="fragments :: pageFooter "  >S</div>
+
+</body>
+</html>
