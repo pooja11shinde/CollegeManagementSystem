@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head th:insert="fragments :: pageHeader">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container-fluid">
+<div th:replace ="fragments :: menu "  >S</div>
+</div>
+<div class="container my-2">
+	<h1 class="text-primary"> </h1>
+	<div class="row">
+	 <div class="col-sm-3 "></div>
+	 
+	  <div class="col-sm-6 ">
+	  
+	  <ul class="nav navbar-dark bg-dark">
+	  <li class="nav-item"><a  th:href = "@{/student/courseList}" class=" nav-link btn btn-md mb-3 ">Course Details </a></li>
+	  <li class="nav-item"><a  th:href = "@{/student/listAnnouncement}" class=" nav-link btn  btn-md mb-3"> Announcements</a></li>
+	  </ul>
+	  </div>
+	  </div>
+	  </div>
+	 
+                        <div th:replace ="fragments :: pageFooter "  >S</div>
+
+</body>
+</html>

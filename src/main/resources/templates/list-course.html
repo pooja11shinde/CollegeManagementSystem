@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head th:insert="fragments :: pageHeader">
+<meta charset="ISO-8859-1">
+<title>Course Details</title>
+</head>
+
+
+<style>
+.text11
+   {
+    font-family:cursive;
+    font-size:28px;
+    color:#4298f5;
+    text-align:center;
+    font-style: bold;
+    margin-top:50px;
+  }
+
+</style>
+
+
+<body>
+<div class="container-fluid">
+<div th:replace ="fragments :: menu "  >S</div>
+</div>
+<div class="col-sm-8 text-left" id="main">
+         <h3 class="text11">Course List</h3><br>
+
+                            <table class="table  table-responsive-md">
+                                <thead>
+                                <th>Course Title</th>
+                                <th>Course Fee</th>
+                                <th>Duration(YR)</th>
+                                <th>Description</th>
+                                
+                                    </thead>
+                                <tbody>
+                                    <tr th:each="course : ${courses}">  <!-- 1 -->
+                                        <td th:text="${course.courseTitle}"></td>             
+
+                                        <td th:text="${course.courseFee}"></td>
+                                        <td th:text="${course.courseDuration}"></td>
+                                        <td th:text="${course.disc}"></td>
+                                       
+                                     </tr>
+                                </tbody>
+                            
+                        </div>
+                        
+</table>
+</div></div>
+<div class="col-sm-4 text-center" id="main"> <br><br>
+         <center> <img src="images/image4.jpg" style="height:270px ;width:200px;">
+
+</div>
+                                                <div th:replace ="fragments :: pageFooter "  ></div>
+
+</body>
+</html>

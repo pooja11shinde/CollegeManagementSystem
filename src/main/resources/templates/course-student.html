@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head th:insert="fragments :: pageHeader">
+</head>
+<body>
+<div class="container-fluid">
+<div th:replace ="fragments :: menu "  >S</div>
+
+<h3>Student List</h3>
+<div class="col-sm-8 text-left" id="main"> 
+                            <table class="table  table-responsive-md">
+                                <thead>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                                <th>Contact No</th>
+                                <th>Address</th>
+                                
+                                    </thead>
+                                <tbody>
+                                    <tr th:each="student : ${students}">  <!-- 1 -->
+                                        <td th:text="${student.firstName}"></td>
+                                        <td th:text="${student.lastName}"></td>
+                                        <td th:text="${student.email}"></td>
+                                        <td th:text="${student.contactNo}"></td>
+                                         <td th:text="${student.address}"></td>
+                                        
+                                      </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                                                <div th:replace ="fragments :: pageFooter "  >S</div>
+                        
+
+</body>
+</html>

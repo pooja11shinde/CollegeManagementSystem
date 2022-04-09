@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head th:insert="fragments :: pageHeader">
+<meta charset="ISO-8859-1">
+<title>Course Detail</title>
+</head>
+<body>
+<div class="container-fluid">
+<div th:replace ="fragments :: menu "  >S</div>
+</div>
+<h3>Current courses</h3>
+<div class="col-sm-8 text-left" id="main"> 
+                            <table class="table  table-responsive-md">
+                                <thead>
+                                <th>Course Title</th>
+                                <th>Course Fee</th>
+                                <th>Duration</th>
+                                <th>Description</th>
+                                
+                                    </thead>
+                                <tbody>
+                                    <tr th:each="course:${teacherCourses}"> 
+                                        <td th:text="${course.courseTitle}"></td>
+                                        <td th:text="${course.courseFee}"></td>
+                                        <td th:text="${courseDuration}"></td>
+                                        <td th:text="${course.disc}"></td>
+                                        <td><a th:href="@{/teacher/listStudent/{id}(id=${course.id})}" class="btn btn-danger">Student of course</a></td> 
+                                     </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div th:replace ="fragments :: pageFooter "  >S</div>
+
+</body>
+</html>
